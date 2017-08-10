@@ -1,0 +1,46 @@
+// Variants
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+
+  .alert-icon {
+    color: #fff;
+  }
+
+  &.alert-icon-bg .alert-icon {
+  	background-color: lighten($background, 5%);
+  }
+}
+
+// Outline variants
+@mixin alert-outline-variant($border, $text-color) {
+  background-color: #fff;
+  border-color: $border;
+  color: $text-color;
+
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+
+  .alert-link {
+    color: darken($text-color, 10%);
+  }
+
+  .alert-icon {
+    color: $text-color;
+  }
+
+  &.alert-icon-bg .alert-icon {
+  	background-color: $text-color;
+    color: #fff;
+  }
+}

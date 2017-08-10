@@ -1,0 +1,5 @@
+// Toastr variants
+@mixin toastr-variant($background, $color) {
+  background-color: $background;
+  color: $color;
+}

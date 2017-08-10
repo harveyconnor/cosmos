@@ -1,0 +1,95 @@
+.table {
+  > thead {
+    background-color: $table-header-bg-color;
+  }
+
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .actions {
+    a {
+      color: $gray-light;
+      font-size: $font-size-large;
+      transition: color $transition-duration;
+
+      &:hover,
+      &:focus {
+        color: $brand-primary;
+      }
+    }
+  }
+}
+
+// Flip scroll
+.table-flip-scroll {
+  @media screen and (max-width: $screen-xs-max) {
+    @include clearfix();
+
+    > .table {
+      border: 1px solid $table-border-color;
+      display: block;
+      position: relative;
+
+      > thead,
+      > tbody {
+        > tr > th,
+        > tr > td {
+          border: none;
+          display: block;
+          text-align: left;
+        }
+      }
+    }
+
+    > .table > thead {
+      display: block;
+      float: left;
+    }
+
+    > .table > thead > tr {
+      display: block;
+    }
+
+    > .table > thead > tr > th,
+    > .table > thead > tr > td {
+      text-align: right;
+    }
+
+    > .table > tbody {
+      @include clearfix();
+      border-left: 1px solid $table-border-color;
+      display: block;
+      overflow-x: auto;
+      position: relative;
+      white-space: nowrap;
+      width: auto;
+    }
+
+    > .table > tbody > tr {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+}
+
+// Borderless
+.table-borderless {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+// Nav tabs
+.site-right-sidebar {
+  .nav-tabs {
+    width: 100%;
+    background-color: $site-right-sidebar-nav-tabs-bg;
+    border: none;
+
+    > li {
+      display: table-cell;
+      float: none;
+      margin-bottom: 0;
+      text-align: center;
+      width: 1%;
+
+      > a {
+        border: none !important;
+        border-radius: 0;
+        color: $site-right-sidebar-nav-tabs-color;
+        margin-right: 0;
+
+        &:hover,
+        &:focus {
+          color: $text-color;
+          background-color: #ddd;
+        }
+      }
+
+      &.active > a {
+        &,
+        &:hover,
+        &:focus {
+          color: $site-right-sidebar-nav-tabs-active-color;
+          background-color: $site-right-sidebar-nav-tabs-active-bg;
+        }
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 15px 0;
+  }
+}
+
+// Chat
+.site-right-sidebar .sidebar-chat {
+  .media-list > .media {
+    margin-top: 0;
+    > a {
+      background-color: $sidebar-right-chat-bg;
+      color: $sidebar-right-chat-color;
+      display: block;
+      padding: 15px 30px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $sidebar-right-chat-hover-bg;
+        color: $sidebar-right-chat-hover-color;
+      }
+    }
+  }
+}
+
+.site-right-sidebar .sidebar-chat-window {
+  display: none;
+  padding: 15px 30px;
+
+  .scw-item {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .scw-item.self {
+    text-align: right;
+  }
+
+  .scw-item span {
+    background-color: $sidebar-right-chat-window-message-bg;
+    border-radius: $border-radius-base;
+    display: inline-block;
+    max-width: 70%;
+    padding: 5px 10px;
+    text-align: left;
+  }
+
+  .scw-item.self span {
+    background-color: $sidebar-right-chat-window-message-self-bg;
+    color: #fff;
+  }
+
+  .scw-form {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+
+  .scw-form form {
+    position: relative;
+  }
+
+  .scw-form .form-control {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .scw-form .btn {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #999;
+    position: absolute;
+    right: 0;
+    top: -2px;
+  }
+}
+
+// Todo
+.site-right-sidebar .sidebar-todo {
+  .t-group {
+    padding: 15px 30px;
+  }
+
+  .t-item {
+    margin-bottom: 15px;
+  }
+
+  .t-item input[type=checkbox]:checked + span + span {
+    text-decoration: line-through;
+    color: #999;
+  }
+
+}
+
+// Settings
+.site-right-sidebar .sidebar-settings {
+  .s-group {
+    padding: 15px 30px;
+  }
+
+  .s-item {
+    margin-bottom: 7px;
+    padding-right: 45px;
+    padding-top: 5px;
+    position: relative;
+
+    .si-checkbox {
+      position: absolute;
+      right: 0;
+      top: 6px;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.authentication-body {
+  background-color: $authentication-body-bg;
+}
+
+.authentication-header {
+  padding: 15px 0;
+
+  .authentication-logo {
+    color: #333;
+    display: block;
+    font-size: 19px;
+    font-weight: 300;
+    transition: all $transition-duration;
+
+    &:hover,
+    &:focus {
+      color: #333;
+      text-decoration: none;
+    }
+  }
+}
+
+.authentication-progress  {
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+
+  li {
+    display: inline-block;
+    position: relative;
+  }
+
+  li:before {
+    background-color: $authentication-progress-before-bg;
+    content: '';
+    display: inline-block;
+    height: 2px;
+    vertical-align: middle;
+    width: 20px;
+  }
+
+  li.active:before {
+    background-color: $authentication-progress-active-before-bg;
+  }
+
+  li.active ~ li::before {
+    background-color: $authentication-progress-inactive-before-bg;
+  }
+
+  li:first-child:before {
+    display: none;
+  }
+
+  li:after {
+    background-color: $authentication-progress-after-bg;
+    border: 2px solid $authentication-progress-after-border;
+    border-radius: 50%;
+    content: '';
+    display: inline-block;
+    height: $authentication-progress-after-height;
+    line-height: $authentication-progress-after-height;
+    vertical-align: middle;
+    width: $authentication-progress-after-width;
+  }
+
+  li.active:after {
+    background-color: $authentication-progress-active-after-bg;
+    border-color: $authentication-progress-active-after-border;
+  }
+
+  li.active ~ li::after {
+    background-color: $authentication-progress-inactive-after-bg;
+    border-color: $authentication-progress-inactive-after-border;
+  }
+}
+
+.authentication-footer {
+  padding: 15px 0;
+  text-align: center;
+}
+
+.authentication-content {
+  border: $authentication-content-border;
+  border-radius: $border-radius-large;
+  padding: $authentication-content-padding;
+}

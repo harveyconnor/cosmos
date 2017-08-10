@@ -1,0 +1,271 @@
+.layout-contacts {
+	.site-main,
+	.site-content {
+		height: 100%;
+	}
+
+	.site-content {
+		padding: 0;
+	}
+}
+
+.contacts {
+	background-color: #fff;
+	height: 100%;
+	position: relative;
+
+  .c-left-toolbar {
+		background-color: $contacts-left-toolbar-bg;
+		border-top: $contacts-left-toolbar-border-top;
+		border-right: $contacts-left-toolbar-border-right;
+		bottom: 0;
+  	height: $contacts-left-toolbar-height;
+  	line-height: $contacts-left-toolbar-height;
+		left: 0;
+		padding: $contacts-left-toolbar-padding;
+		position: absolute;
+  	width: $contacts-list-width;
+  	z-index: 98;
+
+  	@media (max-width: $grid-float-breakpoint-max) {
+			border-right: none;
+      right: 0;
+      width: auto;
+    }
+
+    form {
+    	display: inline-block;
+    	width: 100%;
+    }
+  }
+
+	.c-list {
+		background-color: $contacts-list-bg;
+		border-right: $contacts-list-border-right;
+		bottom: $contacts-left-toolbar-height;
+		left: 0;
+		position: absolute;
+		top: 0;
+	  width: $contacts-list-width;
+  	z-index: 97;
+
+  	@media (max-width: $grid-float-breakpoint-max) {
+			border-right: none;
+      right: 0;
+      width: auto;
+    }
+
+    ul {
+		  list-style: none;
+		  margin-bottom: 0;
+		  padding-left: 0;
+
+    	> li {
+				display: block;
+
+			  > a {
+			    display: block;
+		    	padding: $contacts-list-link-padding;
+		    	position: relative;
+			    text-decoration: none;
+			    transition: all $transition-duration;
+
+			    &:before {
+				    background-color: transparent;
+				    bottom: -1px;
+						content: '';
+				    display: block;
+				    left: 0;
+				    position: absolute;
+				    top: -1px;
+				    width: 3px;
+			    }
+			  }
+
+			  &.cl-title {
+			    color: $contacts-list-title-color;
+				  font-weight: $contacts-list-title-font-weight;
+			    font-size: $contacts-list-title-font-size;
+		    	padding: $contacts-list-title-padding;
+		    	position: relative;
+
+			    &:before {
+				    background-color: $contacts-list-title-line-bg;
+						content: '';
+				    display: block;
+				    height: 1px;
+				    left: $contacts-list-title-line-bg-offset;
+				    position: absolute;
+				    right: $contacts-list-title-line-bg-offset;
+				    top: 50%;
+				    z-index: 9;
+			    }
+
+		    	span {
+		    		background-color: $contacts-list-title-bg;
+		    		padding-right: 15px;
+		    		position: relative;
+				    z-index: 10;
+		    	}
+			  }
+	    }
+
+		  > li > a:hover,
+		  > li > a:focus {
+		    background-color: $contacts-list-link-hover-bg;
+
+		    &:before {
+			    background-color: $contacts-list-link-hover-before-bg;
+		    }
+		  }
+
+		  > li.active > a {
+		    background-color: $contacts-list-link-active-bg;
+
+		    &:before {
+			    background-color: $contacts-list-link-active-before-bg;
+		    }
+		  }
+
+    	.cl-content {
+	    	padding: $contacts-list-link-content-padding;
+	    	position: relative;
+    	}
+
+    	.cl-avatar {
+    		left: 0;
+    		position: absolute;
+    		top: 0;
+
+    		img {
+    			border-radius: $contacts-list-link-avatar-border-radius;
+    		}
+    	}
+
+    	.cl-contact,
+    	.cl-text {
+			  overflow: hidden;
+			  text-overflow: ellipsis;
+			  white-space: nowrap;
+    	}
+
+    	.cl-contact {
+		    color: $contacts-list-link-contact-color;
+			  font-weight: $contacts-list-link-contact-font-weight;
+		    font-size: $contacts-list-link-contact-font-size;
+		    padding-right: 50px;
+    	}
+
+    	.cl-text {
+		    color: $contacts-list-link-text-color;
+			  font-weight: $contacts-list-link-text-font-weight;
+		    font-size: $contacts-list-link-text-font-size;
+
+		    i {
+		    	font-size: $font-size-large;
+		    }
+    	}
+    }
+	}
+
+  .c-right-toolbar {
+		background-color: $contacts-right-toolbar-bg;
+		border-bottom: $contacts-right-toolbar-border-bottom;
+  	height: $contacts-right-toolbar-height;
+		left: $contacts-list-width;
+		padding: $contacts-right-toolbar-padding;
+		position: absolute;
+		right: 0;
+		top: 0;
+  	z-index: 100;
+		@include clearfix;
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      display: none;
+      left: 0;
+    }
+
+		.crt-detail-mode-turn-off {
+			display: none;
+			float: left;
+		}
+
+    > ul {
+		  list-style: none;
+		  margin-bottom: 0;
+		  padding-left: 0;
+		  white-space: nowrap;
+
+    	> li {
+				display: inline-block;
+    		position: relative;
+
+			  > a {
+			    color: $contacts-right-toolbar-link-color;
+			    display: block;
+			    font-size: $contacts-right-toolbar-link-font-size;
+		      height: $contacts-right-toolbar-link-height;
+			    line-height: $contacts-right-toolbar-link-line-height;
+			    padding: $contacts-right-toolbar-link-padding;
+			    text-decoration: none;
+			    transition: all $transition-duration;
+
+				  &:hover,
+				  &:focus {
+				    background-color: $contacts-right-toolbar-link-hover-bg;
+				  }
+
+				  .mt-icon {
+				    color: $contacts-right-toolbar-link-icon-color;
+				    font-size: $contacts-right-toolbar-link-icon-font-size;
+				    margin-right: $contacts-right-toolbar-link-icon-margin-right;
+				    position: relative;
+				    top: 1px;
+				  }
+
+				  .mt-chevron {
+				    color: $contacts-right-toolbar-link-chevron-color;
+				    font-size: $contacts-right-toolbar-link-chevron-font-size;
+				    margin-left: $contacts-right-toolbar-link-chevron-margin-left;
+				    position: relative;
+				    top: 2px;
+				  }
+			  }
+
+		    .dropdown-menu > li > a i {
+		      font-size: $font-size-large;
+				  margin-right: $contacts-right-toolbar-link-dropdown-icon-margin-right;
+		      position: relative;
+		      top: 1px;
+		    }
+    	}
+    }
+
+		@media (max-width: $grid-float-breakpoint-max) {
+			&.crt-detail-mode-turned-on {
+				.crt-detail-mode-turn-off {
+					display: block;
+				}
+			}
+		}
+  }
+
+	.c-detail {
+		background-color: $contacts-detail-bg;
+		bottom: 0;
+		left: $contacts-list-width;
+		position: absolute;
+		right: 0;
+		top: $contacts-right-toolbar-height;
+  	z-index: 99;
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      display: none;
+      left: 0;
+    }
+
+    .cd-content {
+			padding: $contacts-detail-padding;
+    }
+	}
+}

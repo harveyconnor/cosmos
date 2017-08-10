@@ -1,0 +1,113 @@
+// Core variables and mixins
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+
+// Custom variables and mixins
+@import "custom/variables-bootstrap";
+@import "custom/variables-cosmos";
+@import "custom/mixins";
+
+// Demo code
+.demo-grid-block {
+	background: rgba(0, 0, 0, 0.1);
+	border-radius: 0;
+	color: #777;
+	margin-bottom: 15px;
+	padding: 15px;
+	text-align: center;
+}
+
+.demo-icon-set {
+	h4 {
+		border-top: 1px solid #e5e5e5;
+    margin-top: 30px;
+    padding-top: 30px;
+	}
+
+	.demo-icon-block {
+		border-radius: $border-radius-base;
+	  cursor: pointer;
+	  line-height: 64px;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+		transition: all $transition-duration;
+	  white-space: nowrap;
+
+	  &:hover {
+	  	background-color: $brand-primary;
+			color: #fff;
+	  }
+
+	  i,
+	  span {
+	  	display: inline-block;
+	  }
+
+		i {
+		  font-size: 32px;
+		  width: 64px;
+		  vertical-align: middle;
+		}
+	}
+}
+
+.demo-flag-block {
+  margin-bottom: 30px;
+  padding: 15px;
+  border: 1px solid #ddd;
+	border-radius: $border-radius-base;
+	
+	.name,
+	.capital {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+	}
+
+	.capital {
+	  margin-bottom: 10px;
+	}
+
+	.flag-icon {
+	  font-size: 60px;
+	}
+}
+
+.jqvmap-zoomin, 
+.jqvmap-zoomout {
+	border-radius: 0;
+  height: 20px;
+  line-height: 15px;
+	width: 20px;
+}
+
+.jqvmap-zoomout {
+  top: 40px;
+}
+
+.page-layouts {
+	a {
+	  color: rgba(0, 0, 0, 0.5);
+	  display: block;
+	  font-weight: bold;
+	  text-align: center;
+		text-decoration: none;
+	  transition: all $transition-duration;
+
+		&:hover,
+		&:focus {
+		  color: rgba(0, 0, 0, 0.7);
+
+			img {
+			  opacity: 0.7;
+			}
+		}
+	}
+
+	img {
+	  transition: all $transition-duration;
+		width: 100%;
+	}
+}
+
+// Your code goes here

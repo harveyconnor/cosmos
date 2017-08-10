@@ -1,0 +1,128 @@
+.nav {
+  > li {
+    > a {
+      color: $nav-link-color;
+      transition: all $transition-duration;
+
+      &:hover,
+      &:focus {
+        color: $nav-link-hover-color;
+      }
+    }
+  }
+}
+
+// Tabs
+.nav-tabs {
+  > li {
+    > a {
+      margin-right: 5px;
+
+      i {
+        font-size: $font-size-large;
+        margin-right: 5px;
+        position: relative;
+        top: -2px;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+// Tabs custom
+.nav-tabs-custom {
+  border-bottom-color: $nav-tabs-custom-border-color;
+  border-bottom-width: 2px;
+
+  > li {
+    margin-bottom: -2px;
+
+    > a {
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid transparent;
+      border-radius: 0;
+      &:hover {
+        background-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+        border: none;
+        border-bottom: 2px solid transparent;
+        border-bottom-color: $nav-tabs-custom-link-active-border-color;
+      }
+    }
+  }
+
+  &.nav-tabs-justified {
+    border-bottom: 0;
+
+    > li > a {
+      border-radius: 0;
+    }
+
+    .open > a {
+      &,
+      &:hover,
+      &:focus {
+        border-color: $nav-tabs-custom-link-active-border-color;
+      }
+    }
+
+    > .active > a,
+    > .active > a:hover,
+    > .active > a:focus {
+      border: none;
+      border-bottom: 2px solid $nav-tabs-justified-link-border-color;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      > li > a {
+        border-bottom: 2px solid $nav-tabs-justified-link-border-color;
+        border-radius: 0;
+      }
+      > .active > a,
+      > .active > a:hover,
+      > .active > a:focus {
+        border-bottom-color: $nav-tabs-custom-link-active-border-color;
+      }
+    }
+  }
+
+  .dropdown-menu {
+    margin-top: -2px;
+  }
+}
+
+// Pills custom
+.nav-pills-custom {
+  > li {
+    + li {
+      margin-left: 5px;
+    }
+
+    > a {
+      border: 1px solid transparent;
+
+      &:hover {
+        border-color: $nav-tabs-link-hover-border-color;
+      }
+    }
+
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $nav-pills-active-link-hover-bg;
+        background-color: transparent;
+        border-color: $nav-pills-active-link-hover-bg;
+      }
+    }
+  }
+}

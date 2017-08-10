@@ -1,0 +1,58 @@
+// Margin and padding variants
+@each $pre, $prop in (m: margin, p: padding) {
+  @each $suf, $val in $spacers {
+    $suf: if($suf, "-#{$suf}", "");
+    .#{$pre}-a#{$suf} { #{$prop}:        $val !important; }
+    .#{$pre}-t#{$suf} { #{$prop}-top:    $val !important; }
+    .#{$pre}-r#{$suf} { #{$prop}-right:  $val !important; }
+    .#{$pre}-b#{$suf} { #{$prop}-bottom: $val !important; }
+    .#{$pre}-l#{$suf} { #{$prop}-left:   $val !important; }
+    .#{$pre}-x#{$suf} { #{$prop}-left:   $val !important; #{$prop}-right:  $val !important; }
+    .#{$pre}-y#{$suf} { #{$prop}-bottom: $val !important; #{$prop}-top:    $val !important; }
+  }
+}
+
+@each $pre, $prop in (m: margin, p: padding) {
+  @each $suf, $val in $spacers {
+    $suf: if($suf, "-#{$suf}", "");
+    @media (min-width: $screen-sm-min) {
+      .#{$pre}-sm-a#{$suf} { #{$prop}:        $val !important; }
+      .#{$pre}-sm-t#{$suf} { #{$prop}-top:    $val !important; }
+      .#{$pre}-sm-r#{$suf} { #{$prop}-right:  $val !important; }
+      .#{$pre}-sm-b#{$suf} { #{$prop}-bottom: $val !important; }
+      .#{$pre}-sm-l#{$suf} { #{$prop}-left:   $val !important; }
+      .#{$pre}-sm-x#{$suf} { #{$prop}-left:   $val !important; #{$prop}-right:  $val !important; }
+      .#{$pre}-sm-y#{$suf} { #{$prop}-bottom: $val !important; #{$prop}-top:    $val !important; }
+    }
+  }
+}
+
+@each $pre, $prop in (m: margin, p: padding) {
+  @each $suf, $val in $spacers {
+    $suf: if($suf, "-#{$suf}", "");
+    @media (min-width: $screen-md-min) {
+      .#{$pre}-md-a#{$suf} { #{$prop}:        $val !important; }
+      .#{$pre}-md-t#{$suf} { #{$prop}-top:    $val !important; }
+      .#{$pre}-md-r#{$suf} { #{$prop}-right:  $val !important; }
+      .#{$pre}-md-b#{$suf} { #{$prop}-bottom: $val !important; }
+      .#{$pre}-md-l#{$suf} { #{$prop}-left:   $val !important; }
+      .#{$pre}-md-x#{$suf} { #{$prop}-left:   $val !important; #{$prop}-right:  $val !important; }
+      .#{$pre}-md-y#{$suf} { #{$prop}-bottom: $val !important; #{$prop}-top:    $val !important; }
+    }
+  }
+}
+
+@each $pre, $prop in (m: margin, p: padding) {
+  @each $suf, $val in $spacers {
+    $suf: if($suf, "-#{$suf}", "");
+    @media (min-width: $screen-lg-min) {
+      .#{$pre}-lg-a#{$suf} { #{$prop}:        $val !important; }
+      .#{$pre}-lg-t#{$suf} { #{$prop}-top:    $val !important; }
+      .#{$pre}-lg-r#{$suf} { #{$prop}-right:  $val !important; }
+      .#{$pre}-lg-b#{$suf} { #{$prop}-bottom: $val !important; }
+      .#{$pre}-lg-l#{$suf} { #{$prop}-left:   $val !important; }
+      .#{$pre}-lg-x#{$suf} { #{$prop}-left:   $val !important; #{$prop}-right:  $val !important; }
+      .#{$pre}-lg-y#{$suf} { #{$prop}-bottom: $val !important; #{$prop}-top:    $val !important; }
+    }
+  }
+}

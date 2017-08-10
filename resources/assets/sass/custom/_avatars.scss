@@ -1,0 +1,28 @@
+.avatar {
+  position: relative;
+
+  .status {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+
+    &.top {
+      top: 0;
+    }
+
+    &.left {
+      left: 0;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}

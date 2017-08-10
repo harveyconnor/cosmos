@@ -1,0 +1,29 @@
+.progress {
+  box-shadow: $progress-box-shadow;
+  height: $progress-height;
+  margin-bottom: $progress-margin-bottom;
+}
+
+.progress-bar {
+  box-shadow: $progress-bar-box-shadow;
+  line-height: $progress-bar-line-height;
+}
+
+// Sizes
+.progress-lg {
+  @include progress-size(
+    $progress-lg-height
+  );
+}
+
+.progress-sm {
+  @include progress-size(
+    $progress-sm-height
+  );
+}
+
+.progress-xs {
+  @include progress-size(
+    $progress-xs-height
+  );
+}

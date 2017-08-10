@@ -1,0 +1,56 @@
+.toast-title {
+  font-weight: $toast-title-font-weight;
+}
+
+.toast-message a,
+.toast-message label {
+  color: $toast-color;
+}
+
+.toast-message a:hover {
+  color: $toast-hover-color;
+}
+
+#toast-container > div {
+  border-radius: $toast-border-radius;
+  box-shadow: $toast-box-shadow;
+  color: $toast-color;
+  margin: $toast-margin;
+  opacity: $toast-opacity;
+  transition: all $transition-duration;
+  width: $toast-width;
+
+  &:hover {
+    box-shadow: $toast-hover-box-shadow;
+  }
+}
+
+.toast-progress {
+  background-color: $toast-progress-bg;
+  height: $toast-progress-height;
+  opacity: $toast-progress-opacity;
+}
+
+.toast-top-full-width {
+  top: $toast-full-width-top;
+}
+.toast-bottom-full-width {
+  bottom: $toast-full-width-bottom;
+}
+
+// Variants
+.toast-success {
+  @include toastr-variant($toast-success-bg, $toast-success-color);
+}
+
+.toast-info {
+  @include toastr-variant($toast-info-bg, $toast-info-color);
+}
+
+.toast-warning {
+  @include toastr-variant($toast-warning-bg, $toast-warning-color);
+}
+
+.toast-error {
+  @include toastr-variant($toast-error-bg, $toast-error-color);
+}

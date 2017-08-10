@@ -1,0 +1,1138 @@
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+$transition-duration:                                          0.3s !default;
+
+
+//== Alerts
+//
+//##
+$alert-icon-font-size:                                         24px !default;
+$alert-icon-line-height:                                       24px !default;
+$alert-icon-margin:                                            15px !default;
+$alert-icon-width:                                             60px !default;
+
+
+//== Authentication
+//
+//##
+$authentication-body-bg:                                       #fff !default;
+
+$authentication-progress-before-bg:                            #8261c5 !default;
+$authentication-progress-active-before-bg:                     #8261c5 !default;
+$authentication-progress-inactive-before-bg:                   #e9ebf0 !default;
+
+$authentication-progress-after-height:                         10px !default;
+$authentication-progress-after-width:                          10px !default;
+
+$authentication-progress-after-bg:                             #8261c5 !default;
+$authentication-progress-after-border:                         #8261c5 !default;
+$authentication-progress-active-after-bg:                      #fff !default;
+$authentication-progress-active-after-border:                  #8261c5 !default;
+$authentication-progress-inactive-after-bg:                    #fff !default;
+$authentication-progress-inactive-after-border:                #e9ebf0 !default;
+
+$authentication-content-border:                                1px dashed #e5e5e5 !default;
+$authentication-content-padding:                               30px !default;
+
+
+//== Badges
+//
+//##
+
+$badge-font-size:                                              $font-size-small !default;
+$badge-padding-horizontal:                                     5px !default;
+$badge-padding-vertical:                                       2px !default;
+
+$badge-default-bg:                                             $label-default-bg !default;
+$badge-primary-bg:                                             $label-primary-bg !default;
+$badge-success-bg:                                             $label-success-bg !default;
+$badge-info-bg:                                                $label-info-bg !default;
+$badge-warning-bg:                                             $label-warning-bg !default;
+$badge-danger-bg:                                              $label-danger-bg !default;
+
+
+//== Buttons
+//
+//##
+
+$btn-active-box-shadow:                                        none !default;
+$btn-box-shadow:                                               none !default;
+$btn-label-bg:                                                 rgba(0, 0, 0, 0.15) !default;
+$btn-border-radius-pill:                                       10em !default;
+$btn-text-transform:                                           none !default;
+$btn-transition:                                               $transition-duration !default;
+
+
+//== Contacts
+//
+//##
+
+// Left toolbar
+$contacts-left-toolbar-bg:                                     #f5f5f5 !default;
+$contacts-left-toolbar-border-top:                             1px solid rgba(0, 0, 0, 0.1) !default;
+$contacts-left-toolbar-border-right:                           1px solid rgba(0, 0, 0, 0.1) !default;
+$contacts-left-toolbar-height:                                 60px !default;
+$contacts-left-toolbar-padding:                                0 15px !default;
+
+// Llist
+$contacts-list-bg:                                             #fff !default;
+$contacts-list-border-right:                                   1px solid rgba(0, 0, 0, 0.1) !default;
+$contacts-list-width:                                          350px !default;
+
+$contacts-list-link-padding:                                   15px !default;
+
+$contacts-list-link-hover-bg:                                  darken($contacts-list-bg, 5%) !default;
+$contacts-list-link-hover-before-bg:                           null !default;
+
+$contacts-list-link-active-bg:                                 darken($contacts-list-bg, 5%) !default;
+$contacts-list-link-active-before-bg:                          null !default;
+
+$contacts-list-link-unread-bg:                                 null !default;
+$contacts-list-link-unread-before-bg:                          $brand-primary !default;
+
+$contacts-list-link-content-padding:                           0 0 0 55px !default;
+
+$contacts-list-link-avatar-border-radius:                      $border-radius-base !default;
+
+$contacts-list-link-time-color:                                #999 !default;
+$contacts-list-link-time-font-size:                            $font-size-base !default;
+$contacts-list-link-time-font-weight:                          null !default;
+
+$contacts-list-link-contact-color:                             $text-color !default;
+$contacts-list-link-contact-font-size:                         $font-size-base !default;
+$contacts-list-link-contact-font-weight:                       bold !default;
+
+$contacts-list-link-text-color:                                #999 !default;
+$contacts-list-link-text-font-size:                            $font-size-base !default;
+$contacts-list-link-text-font-weight:                          null !default;  
+
+$contacts-list-title-bg:                                       #fff !default;
+$contacts-list-title-color:                                    #999 !default;
+$contacts-list-title-font-size:                                15px !default;
+$contacts-list-title-font-weight:                              null !default;
+$contacts-list-title-line-bg:                                  rgba(0, 0, 0, 0.1) !default;
+$contacts-list-title-line-bg-offset:                           15px !default;
+$contacts-list-title-padding:                                  10px 15px !default;
+
+// Right toolbar
+$contacts-right-toolbar-bg:                                    #fff !default;
+$contacts-right-toolbar-border-bottom:                         1px solid rgba(0, 0, 0, 0.1) !default;
+$contacts-right-toolbar-height:                                50px !default;
+$contacts-right-toolbar-padding:                               0 !default;
+
+$contacts-right-toolbar-link-color:                            $text-color !default;
+$contacts-right-toolbar-link-font-size:                        $font-size-base !default;
+$contacts-right-toolbar-link-height:                           49px !default;
+$contacts-right-toolbar-link-line-height:                      49px !default;
+$contacts-right-toolbar-link-padding:                          0 15px !default;
+
+$contacts-right-toolbar-link-hover-bg:                         darken($contacts-right-toolbar-bg, 5%) !default;
+
+$contacts-right-toolbar-link-icon-color:                       lighten($contacts-right-toolbar-link-color, 20%) !default;
+$contacts-right-toolbar-link-icon-font-size:                   $font-size-large !default;
+$contacts-right-toolbar-link-icon-margin-right:                5px !default;
+
+$contacts-right-toolbar-link-chevron-color:                    lighten($contacts-right-toolbar-link-color, 20%) !default;
+$contacts-right-toolbar-link-chevron-font-size:                $font-size-large !default;
+$contacts-right-toolbar-link-chevron-margin-left:              5px !default;
+
+$contacts-right-toolbar-link-dropdown-icon-margin-right:       10px !default;
+
+// Detail
+$contacts-detail-bg:                                           #fff !default;
+$contacts-detail-padding:                                      30px !default;
+
+
+//== Custom forms
+//
+//##
+
+$custom-control-gutter:                                        25px !default;
+$custom-control-margin:                                        10px !default;
+
+$custom-control-indicator-bg:                                  $input-bg !default;
+$custom-control-indicator-border-width:                        1px !default;
+$custom-control-indicator-border-color:                        $input-border !default;
+$custom-control-indicator-disabled-bg:                         $input-bg-disabled !default;
+$custom-control-indicator-size:                                16px !default;
+
+// Checkbox
+$custom-checkbox-background-size:                              65% 65% !default;
+$custom-checkbox-border-radius:                                $border-radius-base !default;
+$custom-checkbox-checked-icon:                                 str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath fill='#{$input-bg}' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Radio
+$custom-radio-background-size:                                 50% 50% !default;
+$custom-radio-border-radius:                                   50% !default;
+$custom-radio-checked-icon:                                    str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='#{$input-bg}'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Select
+$custom-select-background-size:                                8px 16px !default;
+$custom-select-arrows-icon:                                    str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='#{$input-color}' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E"), "#", "%23") !default;
+
+// Variants
+$custom-control-primary-bg:                                    $brand-primary !default;
+$custom-control-success-bg:                                    $brand-success !default;
+$custom-control-info-bg:                                       $brand-info !default;
+$custom-control-warning-bg:                                    $brand-warning !default;
+$custom-control-danger-bg:                                     $brand-danger !default;
+
+
+//== Dropdowns
+//
+//##
+
+$dropdown-box-shadow:                                          0 2px 10px rgba(0, 0, 0, 0.2) !default;
+
+$dropdown-link-padding-vertical:                               5px !default;
+$dropdown-link-padding-horizontal:                             15px !default;
+
+
+//== E-commerce
+//
+//##
+
+// Catalog
+$catalog-filters-bg:                                           #fff !default;
+$catalog-filters-border:                                       1px solid rgba(0, 0, 0, 0.1) !default;
+$catalog-filters-border-radius:                                $border-radius-base !default;
+$catalog-filters-padding-bottom:                               15px !default;
+
+$catalog-product-bg:                                           #fff !default;
+$catalog-product-border:                                       1px solid rgba(0, 0, 0, 0.1) !default;
+$catalog-product-border-radius:                                $border-radius-base !default;
+$catalog-product-margin-bottom:                                20px !default;
+
+$catalog-product-img-height:                                   200px !default;
+
+$catalog-product-label-border-radius:                          $border-radius-base 0 0 $border-radius-base !default;
+$catalog-product-label-color:                                  #fff !default;
+$catalog-product-labe-font-size:                               $font-size-small !default;
+$catalog-product-labe-font-weight:                             null !default;
+$catalog-product-label-padding:                                5px 10px !default;
+
+$catalog-product-content-padding:                              15px !default;
+
+$catalog-product-title-color:                                  $text-color !default;
+$catalog-product-title-font-size:                              15px !default;
+$catalog-product-title-font-weight:                            null !default;
+$catalog-product-title-height:                                 45px !default;
+$catalog-product-title-margin-bottom:                          5px !default;
+
+$catalog-product-rating-border-bottom:                         1px solid rgba(0, 0, 0, 0.1) !default;
+$catalog-product-rating-color:                                 $brand-warning !default;
+$catalog-product-rating-font-size:                             $font-size-large !default;
+$catalog-product-rating-margin-bottom:                         10px !default;
+$catalog-product-rating-padding-bottom:                        10px !default;
+
+$catalog-product-price-margin-bottom:                          10px !default;
+
+$catalog-product-price-current-color:                          $text-color !default;
+$catalog-product-price-current-font-size:                      $font-size-large !default;
+$catalog-product-price-current-font-weight:                    bold !default;
+
+$catalog-product-price-old-color:                              #999 !default;
+$catalog-product-price-old-font-size:                          $font-size-base !default;
+$catalog-product-price-old-font-weight:                        null !default;
+
+// Cart
+$cart-link-border:                                             1px solid rgba(0, 0, 0, 0.2) !default;
+$cart-link-color:                                              $text-color !default;
+$cart-link-font-size:                                          $font-size-base !default;
+$cart-link-font-weight:                                        null !default;
+
+$cart-link-hover-border:                                       1px solid rgba(0, 0, 0, 0.3) !default;
+$cart-link-hover-color:                                        $text-color !default;
+
+// Product
+$product-title-margin-bottom:                                  15px !default;
+
+$product-price-margin-bottom:                                  5px !default;
+
+$product-price-current-color:                                  $text-color !default;
+$product-price-current-font-size:                              $font-size-large !default;
+$product-price-current-font-weight:                            bold !default;
+
+$product-price-old-color:                                      #999 !default;
+$product-price-old-font-size:                                  $font-size-base !default;
+$product-price-old-font-weight:                                null !default;
+
+$product-rating-color:                                         $brand-warning !default;
+$product-rating-font-size:                                     $font-size-large !default;
+$product-rating-margin-bottom:                                 15px !default;
+
+
+//== Errors
+//
+//##
+
+$error-body-bg:                                                #fff !default;
+
+$error-code-font-size:                                         150px !default;
+$error-icon-font-size:                                         100px !default;
+$error-padding:                                                50px 0 !default;
+$error-text-font-size:                                         15px !default;
+$error-social-color:                                           #777 !default;
+$error-social-font-size:                                       21px !default;
+$error-social-hover-color:                                     #000 !default;
+
+
+//== Flags
+//
+//##
+$flag-icon-css-path:                                           "../img/flags" !default;
+
+
+//== Forms
+//
+//##
+
+$input-pill-border-radius:                                     10em !default;
+$input-pill-padding-horizontal:                                1.25em !default;
+
+
+//== Form wizard
+//
+//##
+
+$form-wizard-header-bg:                                        null !default;
+$form-wizard-header-border:                                    #e5e5e5 !default;
+
+$form-wizard-header-link-bg:                                   #fff !default;
+$form-wizard-header-link-color:                                $brand-primary !default;
+$form-wizard-header-link-chevron:                              $form-wizard-header-link-bg !default;
+
+$form-wizard-header-link-active-bg:                            $brand-primary !default;
+$form-wizard-header-link-active-color:                         #fff !default;
+$form-wizard-header-link-active-chevron:                       $form-wizard-header-link-active-bg !default;
+
+$form-wizard-header-link-complete-bg:                          $brand-primary !default;
+$form-wizard-header-link-complete-color:                       #fff !default;
+$form-wizard-header-link-complete-chevron:                     $form-wizard-header-link-complete-bg !default;
+
+$form-wizard-footer-bg:                                        #f5f5f5 !default;
+$form-wizard-footer-border:                                    #e5e5e5 !default;
+
+$form-wizard-progress-height:                                  5px !default;
+
+
+//== Labels
+//
+//##
+$label-border-radius:                                          $border-radius-base !default;
+$label-font-size:                                              85% !default;
+$label-font-weight:                                            500 !default;
+$label-padding:                                                0.2em 0.6em !default;
+
+$label-pill-border-radius:                                     10em !default;
+
+
+//== Layouts
+//
+//##
+
+$site-overlay-bg:                                              rgba(0, 0, 0, 0.5) !default;
+
+// Header
+$site-header-border:                                           rgba(0, 0, 0, 0.1) !default;
+$site-header-height:                                           $navbar-height !default;
+
+// Left sidebar
+$site-left-sidebar-bg:                                         #fff !default;
+$site-left-sidebar-border:                                     rgba(0, 0, 0, 0.1) !default;
+$site-left-sidebar-collapsed-width:                            60px !default;
+$site-left-sidebar-width:                                      220px !default;
+
+// Right sidebar
+$site-right-sidebar-bg:                                        #fff !default;
+$site-right-sidebar-border:                                    rgba(0, 0, 0, 0.1) !default;
+
+// Content
+$site-content-padding:                                         15px 15px 65px 15px !default;
+
+// Footer
+$site-footer-bg:                                               $body-bg !default;
+$site-footer-border:                                           rgba(0, 0, 0, 0.1) !default;
+$site-footer-color:                                            $text-color !default;
+$site-footer-line-height:                                      50px !default;
+$site-footer-height:                                           50px !default;
+$site-footer-padding:                                          0 15px !default;
+
+// Z-indexes
+$zindex-site-content:                                          1000 !default;
+$zindex-site-footer:                                           1000 !default;
+$zindex-site-header:                                           1030 !default;
+$zindex-site-left-sidebar:                                     1020 !default;
+$zindex-site-right-sidebar:                                    1020 !default;
+$zindex-site-overlay:                                          1010 !default;
+
+
+//== Left sidebar
+//
+//##
+
+$site-left-sidebar-button-padding:                             15px !default;
+
+$sidebar-menu-padding-horizontal:                              15px !default;
+$sidebar-menu-padding-vertical:                                10px !default;
+
+// First level links
+$sidebar-menu-link-color:                                      $text-color !default;
+$sidebar-menu-link-font-size:                                  $font-size-base !default;
+$sidebar-menu-link-font-weight:                                bold !default;
+$sidebar-menu-link-line-height:                                18px !default;
+
+$sidebar-menu-link-hover-bg:                                   darken($site-left-sidebar-bg, 5%) !default;
+$sidebar-menu-link-hover-color:                                $sidebar-menu-link-color !default;
+
+$sidebar-menu-link-active-bg:                                  null !default;
+$sidebar-menu-link-active-color:                               $brand-primary !default;
+
+$sidebar-menu-link-open-bg:                                    darken($site-left-sidebar-bg, 5%) !default;
+$sidebar-menu-link-open-color:                                 $sidebar-menu-link-color !default;
+
+$sidebar-menu-icon-color:                                      lighten($sidebar-menu-link-color, 20%) !default;
+$sidebar-menu-icon-font-size:                                  $font-size-large !default;
+$sidebar-menu-icon-margin-right:                               10px !default;
+
+// Second level links
+$sidebar-menu-sub-link-padding:                                8px 15px 8px 43px !default;
+
+$sidebar-menu-sub-link-bg:                                     #fff !default;
+$sidebar-menu-sub-link-color:                                  $sidebar-menu-link-color !default;
+
+$sidebar-menu-sub-link-hover-bg:                               $sidebar-menu-link-hover-bg !default;
+$sidebar-menu-sub-link-hover-color:                            $sidebar-menu-link-hover-color !default;
+
+$sidebar-menu-sub-link-active-bg:                              null !default;
+$sidebar-menu-sub-link-active-color:                           $brand-primary !default;
+
+// Menu titles
+$sidebar-menu-title-color:                                     lighten($sidebar-menu-link-color, 25%) !default;
+$sidebar-menu-title-margin-top:                                15px !default;
+
+$sidebar-menu-title-font-size:                                 $font-size-small !default;
+$sidebar-menu-title-font-weight:                               500 !default;
+
+// Collapsed
+$sidebar-menu-collapsed-border:                                darken($site-left-sidebar-bg, 10%) !default;
+$sidebar-menu-collapsed-submenu-box-shadow:                    null !default;
+
+$sidebar-menu-collapsed-icon-font-size:                        19px !default;
+$sidebar-menu-collapsed-icon-height:                           45px !default;
+
+
+//== Mailbox
+//
+//##
+
+// Toolbar
+$mailbox-toolbar-bg:                                           #fff !default;
+$mailbox-toolbar-border-bottom:                                1px solid rgba(0, 0, 0, 0.1) !default;
+$mailbox-toolbar-height:                                       50px !default;
+$mailbox-toolbar-padding:                                      0 15px 0 45px !default;
+
+$mailbox-toolbar-select-all-margin-right:                      15px !default;
+
+$mailbox-toolbar-link-color:                                   $text-color !default;
+$mailbox-toolbar-link-font-size:                               $font-size-base !default;
+$mailbox-toolbar-link-height:                                  49px !default;
+$mailbox-toolbar-link-line-height:                             49px !default;
+$mailbox-toolbar-link-padding:                                 0 15px !default;
+
+$mailbox-toolbar-link-hover-bg:                                darken($mailbox-toolbar-bg, 5%) !default;
+
+$mailbox-toolbar-link-icon-color:                              lighten($mailbox-toolbar-link-color, 20%) !default;
+$mailbox-toolbar-link-icon-font-size:                          $font-size-large !default;
+$mailbox-toolbar-link-icon-margin-right:                       5px !default;
+
+$mailbox-toolbar-link-chevron-color:                           lighten($mailbox-toolbar-link-color, 20%) !default;
+$mailbox-toolbar-link-chevron-font-size:                       $font-size-large !default;
+$mailbox-toolbar-link-chevron-margin-left:                     5px !default;
+
+$mailbox-toolbar-link-dropdown-icon-margin-right:              10px !default;
+
+// Messages
+$mailbox-messages-bg:                                          #fff !default;
+$mailbox-messages-border-right:                                1px solid rgba(0, 0, 0, 0.1) !default;
+$mailbox-messages-width:                                       350px !default;
+
+$mailbox-messages-link-border:                                 rgba(0, 0, 0, 0.1) !default;
+$mailbox-messages-link-padding:                                15px !default;
+
+$mailbox-messages-link-hover-bg:                               darken($mailbox-messages-bg, 5%) !default;
+$mailbox-messages-link-hover-before-bg:                        null !default;
+
+$mailbox-messages-link-active-bg:                              darken($mailbox-messages-bg, 5%) !default;
+$mailbox-messages-link-active-before-bg:                       null !default;
+
+$mailbox-messages-link-unread-bg:                              null !default;
+$mailbox-messages-link-unread-before-bg:                       $brand-primary !default;
+
+$mailbox-messages-link-content-padding:                        0 0 0 75px !default;
+
+$mailbox-messages-link-avatar-border-radius:                   50% !default;
+
+$mailbox-messages-link-attachment-color:                       #999 !default;
+$mailbox-messages-link-attachment-font-size:                   $font-size-base !default;
+$mailbox-messages-link-attachment-margin:                      5px !default;
+
+$mailbox-messages-link-time-color:                             #999 !default;
+$mailbox-messages-link-time-font-size:                         $font-size-base !default;
+$mailbox-messages-link-time-font-weight:                       null !default;
+
+$mailbox-messages-link-author-color:                           $text-color !default;
+$mailbox-messages-link-author-font-size:                       $font-size-base !default;
+$mailbox-messages-link-author-font-weight:                     bold !default;
+
+$mailbox-messages-link-title-color:                            $text-color !default;
+$mailbox-messages-link-title-font-size:                        $font-size-base !default;
+$mailbox-messages-link-title-font-weight:                      null !default;
+
+$mailbox-messages-link-text-color:                             #999 !default;
+$mailbox-messages-link-text-font-size:                         $font-size-base !default;
+$mailbox-messages-link-text-font-weight:                       null !default;
+
+// Detail
+$mailbox-detail-bg:                                            #fff !default;
+
+$mailbox-detail-title-padding:                                 30px !default;
+$mailbox-detail-title-border-bottom:                           1px solid rgba(0, 0, 0, 0.1) !default;
+
+$mailbox-detail-link-color:                                    #999 !default;
+$mailbox-detail-link-font-size:                                $font-size-large !default;
+$mailbox-detail-link-margin-left:                              10px !default;
+
+$mailbox-detail-link-hover-color:                              $brand-primary !default;
+
+$mailbox-detail-content-padding:                               30px 30px 30px 100px !default;
+
+$mailbox-detail-content-avatar-border-radius:                  50% !default;
+
+$mailbox-detail-info-margin-bottom:                            30px !default;
+
+$mailbox-detail-author-color:                                  $text-color !default;
+$mailbox-detail-author-font-size:                              $font-size-base !default;
+$mailbox-detail-author-font-weight:                            bold !default;
+
+$mailbox-detail-author-email-color:                            #999 !default;
+$mailbox-detail-author-email-font-size:                        $font-size-base !default;
+$mailbox-detail-author-email-font-weight:                      normal !default;
+$mailbox-detail-author-email-margin-left:                      5px !default;
+
+$mailbox-detail-time-color:                                    #999 !default;
+$mailbox-detail-time-font-size:                                $font-size-base !default;
+$mailbox-detail-time-font-weight:                              normal !default;
+
+$mailbox-detail-recipient-color:                               $text-color !default;
+$mailbox-detail-recipient-font-size:                           $font-size-base !default;
+$mailbox-detail-recipient-font-weight:                         null !default;
+
+$mailbox-detail-toolbar-link-color:                            $text-color !default;
+$mailbox-detail-toolbar-link-font-size:                        $font-size-base !default;
+$mailbox-detail-toolbar-link-margin-right:                     15px !default;
+
+$mailbox-detail-toolbar-link-hover-color:                      $brand-primary !default;
+
+$mailbox-detail-toolbar-link-dropdown-icon-margin-right:       10px !default;
+
+$mailbox-detail-toolbar-icon-color:                            lighten($mailbox-toolbar-link-color, 20%) !default;
+$mailbox-detail-toolbar-icon-font-size:                        $font-size-large !default;
+$mailbox-detail-toolbar-icon-margin-right:                     5px !default;
+
+$mailbox-detail-attachments-title-margin-bottom:               15px !default;
+
+$mailbox-detail-attachments-item-bg:                           #eee !default;
+$mailbox-detail-attachments-item-height:                       75px !default;
+$mailbox-detail-attachments-item-margin-right:                 15px !default;
+$mailbox-detail-attachments-item-padding:                      5px 10px !default;
+$mailbox-detail-attachments-item-width:                        120px !default;
+
+$mailbox-detail-compose-padding:                               30px 30px 30px 100px !default;
+$mailbox-detail-compose-border-top:                            1px solid rgba(0, 0, 0, 0.1) !default;
+
+$mailbox-detail-compose-avatar-border-radius:                  50% !default;
+
+$mailbox-detail-compose-link-color:                            $text-color !default;
+$mailbox-detail-compose-link-font-size:                        22px !default;
+$mailbox-detail-compose-link-margin-right:                     15px !default;
+
+$mailbox-detail-compose-link-hover-color:                      $brand-primary !default;
+
+
+//== Messenger
+//
+//##
+
+// Left toolbar
+$messenger-left-toolbar-bg:                                    #f5f5f5 !default;
+$messenger-left-toolbar-border-bottom:                         1px solid rgba(0, 0, 0, 0.1) !default;
+$messenger-left-toolbar-border-right:                          1px solid rgba(0, 0, 0, 0.1) !default;
+$messenger-left-toolbar-height:                                60px !default;
+$messenger-left-toolbar-padding:                               0 15px 0 70px !default;
+
+$messenger-left-toolbar-link-color:                            $gray-light !default;
+$messenger-left-toolbar-link-font-size:                        24px !default;
+$messenger-left-toolbar-link-height:                           59px !default;
+$messenger-left-toolbar-link-line-height:                      59px !default;
+$messenger-left-toolbar-link-padding:                          0 15px !default;
+
+$messenger-left-toolbar-link-hover-color:                      $brand-primary !default;
+
+$messenger-left-toolbar-link-dropdown-icon-margin-right:       10px !default;
+
+// Chat list
+$messenger-chat-list-bg:                                       #fff !default;
+$messenger-chat-list-border-right:                             1px solid rgba(0, 0, 0, 0.1) !default;
+$messenger-chat-list-width:                                    350px !default;
+
+$messenger-chat-list-link-border:                              rgba(0, 0, 0, 0.1) !default;
+$messenger-chat-list-link-padding:                             15px !default;
+
+$messenger-chat-list-link-hover-bg:                            darken($messenger-chat-list-bg, 5%) !default;
+$messenger-chat-list-link-hover-before-bg:                     null !default;
+
+$messenger-chat-list-link-active-bg:                           darken($messenger-chat-list-bg, 5%) !default;
+$messenger-chat-list-link-active-before-bg:                    null !default;
+
+$messenger-chat-list-link-unread-bg:                           null !default;
+$messenger-chat-list-link-unread-before-bg:                    $brand-primary !default;
+
+$messenger-chat-list-link-content-padding:                     0 0 0 55px !default;
+
+$messenger-chat-list-link-avatar-border-radius:                50% !default;
+
+$messenger-chat-list-link-time-color:                          #999 !default;
+$messenger-chat-list-link-time-font-size:                      $font-size-base !default;
+$messenger-chat-list-link-time-font-weight:                    null !default;
+
+$messenger-chat-list-link-contact-color:                       $text-color !default;
+$messenger-chat-list-link-contact-font-size:                   $font-size-base !default;
+$messenger-chat-list-link-contact-font-weight:                 bold !default;
+
+$messenger-chat-list-link-text-color:                          #999 !default;
+$messenger-chat-list-link-text-font-size:                      $font-size-base !default;
+$messenger-chat-list-link-text-font-weight:                    null !default;
+
+// Right toolbar
+$messenger-right-toolbar-bg:                                   #f5f5f5 !default;
+$messenger-right-toolbar-border-bottom:                        1px solid rgba(0, 0, 0, 0.1) !default;
+$messenger-right-toolbar-height:                               60px !default;
+$messenger-right-toolbar-padding:                              0 15px 0 70px !default;
+
+$messenger-right-toolbar-contact-color:                        $text-color !default;
+$messenger-right-toolbar-contact-font-size:                    15px !default;
+$messenger-right-toolbar-contact-font-weight:                  bold !default;
+$messenger-right-toolbar-contact-height:                       59px !default;
+$messenger-right-toolbar-contact-line-height:                  59px !default;
+
+$messenger-right-toolbar-link-color:                           $gray-light !default;
+$messenger-right-toolbar-link-font-size:                       24px !default;
+$messenger-right-toolbar-link-height:                          59px !default;
+$messenger-right-toolbar-link-line-height:                     59px !default;
+$messenger-right-toolbar-link-padding:                         0 15px !default;
+
+$messenger-right-toolbar-link-hover-color:                     $brand-primary !default;
+
+$messenger-right-toolbar-link-dropdown-icon-margin-right:      10px !default;
+
+// Chat window
+$messenger-chat-window-bg:                                     #fff !default;
+
+$messenger-chat-window-padding:                                30px !default;
+
+$messenger-chat-item-border-radius:                            $border-radius-large !default;
+$messenger-chat-item-box-shadow:                               0 1px 0.5px rgba(0, 0, 0, 0.13) !default;
+$messenger-chat-item-left-bg:                                  #f5f5f5 !default;
+$messenger-chat-item-right-bg:                                 lighten($brand-warning, 40%) !default;
+$messenger-chat-item-margin-bottom:                            30px !default;
+$messenger-chat-item-max-width:                                80% !default;
+$messenger-chat-item-padding:                                  15px !default;
+
+$messenger-chat-divider-bg:                                    lighten($brand-primary, 40%) !default;
+$messenger-chat-divider-border-radius:                         $border-radius-large !default;
+$messenger-chat-divider-color:                                 $text-color !default;
+$messenger-chat-divider-font-size:                             $font-size-base !default;
+$messenger-chat-divider-font-weight:                           null !default;
+$messenger-chat-divider-margin-bottom:                         15px !default;
+$messenger-chat-divider-padding:                               2px 10px !default;
+
+$messenger-chat-item-text-color:                               $text-color !default;
+$messenger-chat-item-text-font-size:                           $font-size-base !default;
+$messenger-chat-item-text-font-weight:                         null !default;
+
+$messenger-chat-item-time-color:                               #999 !default;
+$messenger-chat-item-time-font-size:                           $font-size-small !default;
+$messenger-chat-item-time-font-weight:                         null !default;
+
+// Compose
+$messenger-compose-bg:                                         #f5f5f5 !default;
+$messenger-compose-border-bottom:                              1px solid rgba(0, 0, 0, 0.1) !default;
+$messenger-compose-height:                                     80px !default;
+$messenger-compose-padding:                                    15px 30px 15px 80px !default;
+
+$messenger-compose-link-color:                                 $gray-light !default;
+$messenger-compose-link-font-size:                             24px !default;
+$messenger-compose-link-height:                                50px !default;
+$messenger-compose-link-line-height:                           50px !default;
+
+$messenger-compose-link-hover-color:                           $brand-primary !default;
+
+
+//== Material form
+//
+//##
+
+$mf-bottom-line-focus-bg:                                      $brand-primary !default;
+
+$mf-form-control-border:                                       $input-border !default;
+$mf-form-control-padding-vertical:                             5px !default;
+$mf-form-control-placeholder-color:                            $text-color !default;
+
+// Floating label
+$mf-floating-label-color:                                      $text-color !default;
+$mf-floating-label-focused-font-size:                          $font-size-small !default;
+$mf-floating-label-font-size:                                  $font-size-base !default;
+$mf-floating-label-line-height:                                $line-height-base !default;
+
+// Sizes
+$mf-floating-label-sm-font-size:                               $font-size-small !default;
+$mf-floating-label-sm-line-height:                             $line-height-small !default;
+
+$mf-floating-label-lg-font-size:                               $font-size-large !default;
+$mf-floating-label-lg-line-height:                             $line-height-large !default;
+
+// Disabled
+$mf-form-control-disabled-border:                              $input-bg-disabled !default;
+$mf-form-control-disabled-color:                               $input-bg-disabled !default;
+
+// Validation states
+$mf-state-success:                                             $brand-success !default;
+$mf-state-warning:                                             $brand-warning !default;
+$mf-state-error:                                               $brand-danger !default;
+
+
+//== Navs
+//
+//##
+
+$nav-link-color:                                               $text-color !default;
+$nav-link-hover-color:                                         $brand-primary !default;
+
+$nav-tabs-custom-border-color:                                 #eee !default;
+$nav-tabs-custom-link-active-border-color:                     $brand-primary !default;
+
+
+//== Navbar
+//
+//##
+
+$navbar-default-header-bg:                                     null !default;
+$navbar-default-header-bg-full-width:                          null !default;
+
+$navbar-brand-font-size:                                       19px !default;
+$navbar-brand-font-weight:                                     300 !default;
+$navbar-brand-padding:                                         12px 15px !default;
+
+$navbar-nav-icon-font-size-small:                              19px !default;
+$navbar-nav-icon-font-size-large:                              24px !default;
+
+// Toggler
+$navbar-toggler-font-size:                                     24px !default;
+
+$navbar-header-toggler-bg:                                     transparent !default;
+$navbar-header-toggler-color:                                  $navbar-default-link-color !default;
+$navbar-header-toggler-hover-color:                            $navbar-default-link-hover-color !default;
+
+$navbar-collapsible-toggler-bg:                                transparent !default;
+$navbar-collapsible-toggler-color:                             $navbar-default-link-color !default;
+$navbar-collapsible-toggler-hover-color:                       $navbar-default-link-hover-color !default;
+
+$navbar-toggler-right-bg:                                      transparent !default;
+$navbar-toggler-right-border:                                  darken($site-left-sidebar-bg, 5%) !default;
+$navbar-toggler-right-color:                                   $navbar-default-link-color !default;
+$navbar-toggler-right-hover-color:                             $navbar-default-link-hover-color !default;
+
+// Dropdowns
+$navbar-dropdown-header-bg:                                    null !default;
+$navbar-dropdown-header-border:                                1px solid #e5e5e5 !default;
+$navbar-dropdown-header-color:                                 $gray-light !default;
+$navbar-dropdown-header-font-size:                             $font-size-base !default;
+
+$navbar-dropdown-footer-bg:                                    #f5f5f5 !default;
+$navbar-dropdown-footer-border:                                1px solid #e5e5e5 !default;
+$navbar-dropdown-footer-color:                                 $gray-light !default;
+
+$navbar-dropdown-footer-hover-bg:                              #eee !default;
+$navbar-dropdown-footer-hover-color:                           #333 !default;
+
+$navbar-dropdown-height:                                       300px !default;
+
+$navbar-dropdown-max-width:                                    400px !default;
+$navbar-dropdown-min-width:                                    300px !default;
+
+$dropdown-messages-bg:                                         transparent !default;
+$dropdown-messages-color:                                      $navbar-default-link-color !default;
+
+$dropdown-messages-hover-bg:                                   #f5f5f5 !default;
+$dropdown-messages-hover-color:                                $navbar-default-link-hover-color !default;
+
+
+//== Panels
+//
+//##
+$panel-full-default-bg:                                        $gray-light !default;
+$panel-full-default-border:                                    $gray-light !default;
+$panel-full-default-text:                                      #fff !default;
+
+$panel-full-primary-bg:                                        $brand-primary !default;
+$panel-full-primary-border:                                    $brand-primary !default;
+$panel-full-primary-text:                                      #fff !default;
+
+$panel-full-success-bg:                                        $brand-success !default;
+$panel-full-success-border:                                    $brand-success !default;
+$panel-full-success-text:                                      #fff !default;
+
+$panel-full-info-bg:                                           $brand-info !default;
+$panel-full-info-border:                                       $brand-info !default;
+$panel-full-info-text:                                         #fff !default;
+
+$panel-full-warning-bg:                                        $brand-warning !default;
+$panel-full-warning-border:                                    $brand-warning !default;
+$panel-full-warning-text:                                      #fff !default;
+
+$panel-full-danger-bg:                                         $brand-danger !default;
+$panel-full-danger-border:                                     $brand-danger !default;
+$panel-full-danger-text:                                       #fff !default;
+
+
+//== Profile
+//
+//##
+$profile-about-bg:                                             #fff !default;
+$profile-about-border:                                         1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-about-border-radius:                                  $border-radius-base !default;
+$profile-about-padding:                                        30px !default;
+
+$profile-about-avatar-border-radius:                           50% !default;
+$profile-about-avatar-margin-bottom:                           15px !default;
+
+$profile-about-name-color:                                     $text-color !default;
+$profile-about-name-font-size:                                 $font-size-large !default;
+$profile-about-name-font-weight:                               bold !default;
+
+$profile-about-text-color:                                     #999 !default;
+$profile-about-text-font-size:                                 $font-size-base !default;
+$profile-about-text-font-weight:                               null !default;
+
+$profile-about-rating-color:                                   $brand-warning !default;
+$profile-about-rating-font-size:                               $font-size-large !default;
+$profile-about-rating-margin-bottom:                           15px !default;
+
+$profile-about-stat-border-top:                                1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-about-stat-item-border-right:                         1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-about-stat-item-padding:                              10px 0 !default;
+
+$profile-about-stat-number-color:                              $text-color !default;
+$profile-about-stat-number-font-size:                          $font-size-base !default;
+$profile-about-stat-number-font-weight:                        bold !default;
+
+$profile-about-stat-text-color:                                $text-color !default;
+$profile-about-stat-text-font-size:                            $font-size-base !default;
+$profile-about-stat-text-font-weight:                          null !default;
+
+$profile-users-bg:                                             #fff !default;
+$profile-users-border:                                         1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-users-border-radius:                                  $border-radius-base !default;
+$profile-users-padding:                                        20px 30px !default;
+
+$profile-users-link-color:                                     $text-color !default;
+$profile-users-link-font-size:                                 $font-size-base !default;
+$profile-users-link-font-weight:                               null !default;
+
+$profile-users-link-hover-color:                               $brand-primary !default;
+
+$profile-users-avatar-margin-vertical:                         10px !default;
+$profile-users-avatar-border-radius:                           50% !default;
+
+$profile-info-bg:                                              #fff !default;
+$profile-info-border:                                          1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-info-border-radius:                                   $border-radius-base !default;
+$profile-info-padding:                                         30px !default;
+
+$profile-info-margin-bottom:                                   10px !default;
+
+$profile-info-icon-color:                                      #999 !default;
+$profile-info-icon-font-size:                                  $font-size-large !default;
+$profile-info-icon-font-weight:                                null !default;
+
+$profile-info-value-color:                                     $text-color !default;
+$profile-info-value-font-size:                                 $font-size-base !default;
+$profile-info-value-font-weight:                               null !default;
+
+$profile-skills-bg:                                            #fff !default;
+$profile-skills-border:                                        1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-skills-border-radius:                                 $border-radius-base !default;
+$profile-skills-padding:                                       30px !default;
+
+$profile-content-bg:                                           #fff !default;
+$profile-content-border:                                       1px solid rgba(0, 0, 0, 0.1) !default;
+$profile-content-border-radius:                                $border-radius-base !default;
+$profile-content-padding:                                      30px !default;
+
+$profile-content-task-avatar-border-radius:                    50% !default;
+$profile-content-task-hover-bg:                                darken($profile-content-bg, 5%) !default;
+$profile-content-task-padding:                                 15px 30px 15px 85px !default;
+
+$profile-content-task-name-color:                              $text-color !default;
+$profile-content-task-name-font-size:                          $font-size-base !default;
+$profile-content-task-name-font-weight:                        bold !default;
+
+$profile-content-task-text-color:                              $text-color !default;
+$profile-content-task-text-font-size:                          $font-size-base !default;
+$profile-content-task-text-font-weight:                        null !default;
+$profile-content-task-text-vertical-margin:                    5px !default;
+
+$profile-content-task-time-color:                              #999 !default;
+$profile-content-task-time-font-size:                          $font-size-base !default;
+$profile-content-task-time-font-weight:                        null !default;
+
+
+//== Progress bars
+//
+//##
+$progress-box-shadow:                                          none !default;
+$progress-height:                                              15px !default;
+$progress-margin-bottom:                                       15px !default;
+
+$progress-bar-box-shadow:                                      none !default;
+$progress-bar-line-height:                                     15px !default;
+
+// Sizes
+$progress-lg-height:                                           20px !default;
+$progress-sm-height:                                           10px !default;
+$progress-xs-height:                                           5px !default;
+
+
+//== Right sidebar
+//
+//##
+
+$site-right-sidebar-nav-tabs-bg:                               #ddd !default;
+$site-right-sidebar-nav-tabs-active-bg:                        #fff !default;
+
+$site-right-sidebar-nav-tabs-color:                            $text-color !default;
+$site-right-sidebar-nav-tabs-active-color:                     $text-color !default;
+
+$sidebar-right-chat-bg:                                        transparent !default;
+$sidebar-right-chat-color:                                     $text-color !default;
+
+$sidebar-right-chat-hover-bg:                                  #f5f5f5 !default;
+$sidebar-right-chat-hover-color:                               $text-color !default;
+
+$sidebar-right-chat-window-message-bg:                         #e5e5e5 !default;
+$sidebar-right-chat-window-message-self-bg:                    $brand-primary;
+
+
+//== Sliders
+//
+//##
+
+$slider-horizontal-height:                                     4px !default;
+$slider-vertical-width:                                        4px !default;
+
+$slider-track-bg:                                              #e5e5e5 !default;
+
+$slider-selection-bg:                                          #999 !default;
+
+$slider-handle-bg:                                             #999 !default;
+$slider-handle-height:                                         13px !default;
+$slider-handle-width:                                          13px !default;
+
+
+//== Social buttons
+//
+//##
+
+$btn-facebook-color:                                           #fff !default;
+$btn-facebook-bg:                                              #3b5998 !default;
+$btn-facebook-border:                                          #3b5998 !default;
+
+$btn-twitter-color:                                            #fff !default;
+$btn-twitter-bg:                                               #00aced !default;
+$btn-twitter-border:                                           #00aced !default;
+
+$btn-linkedin-color:                                           #fff !default;
+$btn-linkedin-bg:                                              #007bb6 !default;
+$btn-linkedin-border:                                          #007bb6 !default;
+
+$btn-googleplus-color:                                         #fff !default;
+$btn-googleplus-bg:                                            #dd4b39 !default;
+$btn-googleplus-border:                                        #dd4b39 !default;
+
+$btn-youtube-color:                                            #fff !default;
+$btn-youtube-bg:                                               #bb0000 !default;
+$btn-youtube-border:                                           #bb0000 !default;
+
+$btn-pinterest-color:                                          #fff !default;
+$btn-pinterest-bg:                                             #cb2027 !default;
+$btn-pinterest-border:                                         #cb2027 !default;
+
+$btn-instagram-color:                                          #fff !default;
+$btn-instagram-bg:                                             #517fa4 !default;
+$btn-instagram-border:                                         #517fa4 !default;
+
+$btn-tumblr-color:                                             #fff !default;
+$btn-tumblr-bg:                                                #32506d !default;
+$btn-tumblr-border:                                            #32506d !default;
+
+$btn-flickr-color:                                             #fff !default;
+$btn-flickr-bg:                                                #ff0084 !default;
+$btn-flickr-border:                                            #ff0084 !default;
+
+$btn-dribbble-color:                                           #fff !default;
+$btn-dribbble-bg:                                              #ea4c89 !default;
+$btn-dribbble-border:                                          #ea4c89 !default;
+
+
+//== Switches
+//
+//##
+$switch-height:                                                18px !default;
+$switch-padding-left:                                          50px !default;
+$switch-width:                                                 40px !default;
+
+$switch-track-bg:                                              #e5e5e5 !default;
+$switch-track-border-radius:                                   8px !default;
+$switch-track-checked-bg:                                      #e5e5e5 !default;
+$switch-track-height:                                          16px !default;
+
+$switch-handle-bg:                                             #fff !default;
+$switch-handle-border-radius:                                  50% !default;
+$switch-handle-box-shadow:                                     0 1px 2px 0 rgba(0, 0, 0, 0.3) !default;
+$switch-handle-checked-left:                                   25px !default;
+$switch-handle-height:                                         18px !default;
+$switch-handle-width:                                          18px !default;
+
+$switch-handle-checked-primary-bg:                             $brand-primary !default;
+$switch-handle-checked-success-bg:                             $brand-success !default;
+$switch-handle-checked-info-bg:                                $brand-info !default;
+$switch-handle-checked-warning-bg:                             $brand-warning !default;
+$switch-handle-checked-danger-bg:                              $brand-danger !default;
+
+
+//== Tables
+//
+//##
+$table-header-bg-color:                                        #f5f5f5 !default;
+
+
+//== Toastr
+//
+//##
+
+$toast-title-font-weight:                                      700 !default;
+
+$toast-color:                                                  #fff !default;
+$toast-hover-color:                                            null !default;
+
+$toast-box-shadow:                                             0 0 10px rgba(0, 0, 0, 0.15) !default;
+$toast-hover-box-shadow:                                       0 0 10px rgba(0, 0, 0, 0.15) !default;
+
+$toast-border-radius:                                          $border-radius-base !default;
+$toast-margin:                                                 0 0 6px !default;
+$toast-opacity:                                                null !default;
+$toast-width:                                                  300px !default;
+
+$toast-progress-bg:                                            $progress-bg !default;
+$toast-progress-height:                                        4px !default;
+$toast-progress-opacity:                                       0.4 !default;
+
+$toast-full-width-bottom:                                      15px !default;
+$toast-full-width-top:                                         15px !default;
+
+// Variants
+$toast-success-bg:                                             $btn-success-bg !default;
+$toast-success-color:                                          $btn-success-color !default;
+
+$toast-info-bg:                                                $btn-info-bg !default;
+$toast-info-color:                                             $btn-info-color !default;
+
+$toast-warning-bg:                                             $btn-warning-bg !default;
+$toast-warning-color:                                          $btn-warning-color !default;
+
+$toast-error-bg:                                               $btn-danger-bg !default;
+$toast-error-color:                                            $btn-danger-color !default;
+
+
+//== Utilities
+//
+//##
+
+$border-radius-variants:                                       ("0": 0, "5": 5px, "10": 10px, "15": 15px, "20": 20px, "30": 30px) !default;
+$border-width-variants:                                        ("2": 2px, "3": 3px, "4": 4px, "5": 5px) !default;
+$border-style-variants:                                        ("solid": solid, "dashed": dashed, "dotted": dotted) !default;
+$box-variants:                                                 ("8": 8px, "12": 12px, "16": 16px, "20": 20px, "24": 24px, "28": 28px, "32": 32px, "36": 36px, "40": 40px, "44": 44px, "48": 48px, "52": 52px, "56": 56px, "60": 60px, "64": 64px, "68": 68px, "72": 72px, "76": 76px, "80": 80px, "84": 84px, "88": 88px, "92": 92px, "96": 96px, "100": 100px) !default;
+$min-width-variants:                                           ("20": 20px, "40": 40px, "60": 60px, "80": 80px, "100": 100px, "120": 120px, "140": 140px, "160": 160px, "180": 180px, "200": 200px) !default;
+$spacers:                                                      ("0": 0, "5": 5px, "10": 10px, "15": 15px, "20": 20px, "30": 30px, "40": 40px, "50": 50px, "60": 60px) !default;
+$grid-gutter-width-variants:                                   ("xs": 10px, "sm": 20px, "lg": 40px) !default;
+
+
+//== Widgets
+//
+//##
+
+$widget-bg:                                                    #fff !default;
+
+$widget-tile-1-border:                                         1px solid #e5e5e5 !default;
+$widget-tile-1-text-color:                                     #999 !default;
+$widget-tile-1-number-font-size:                               25px !default;
+$widget-tile-1-number-font-weight:                             700 !default;
+$widget-tile-1-icon-color:                                     rgba(255, 255, 255, 0.3) !default;
+$widget-tile-1-icon-font-size:                                 25px !default;
+
+$widget-tile-2-border:                                         1px solid #e5e5e5 !default;
+$widget-tile-2-title-color:                                    rgba(255, 255, 255, 0.9) !default;
+$widget-tile-2-title-font-weight:                              700 !default;
+$widget-tile-2-number-color:                                   #fff !default;
+$widget-tile-2-number-font-size:                               25px !default;
+$widget-tile-2-text-color:                                     rgba(255, 255, 255, 0.9) !default;
+$widget-tile-2-icon-color:                                     rgba(255, 255, 255, 0.4) !default;
+$widget-tile-2-icon-font-size:                                 40px !default;
+
+$widget-tabs-link-border-color:                                #e5e5e5 !default;
+$widget-tabs-link-hover-bg:                                    #ddd !default;
+$widget-tabs-link-active-color:                                $text-color !default;
+$widget-tabs-link-active-bg:                                   #fff !default;
+$widget-tabs-content-bg:                                       #fff !default;
+$widget-tabs-content-border:                                   1px solid #e5e5e5 !default;
+$widget-tabs-footer-border-top:                                1px solid #e5e5e5 !default;
+
+$widget-activity-line-color:                                   #eee !default;
+
+$widget-infoblock-overlay-bg:                                  #000 !default;
+$widget-infoblock-number-color:                                #fff !default;
+$widget-infoblock-number-font-size:                            25px !default;
+$widget-infoblock-number-font-weight:                          700 !default;
+$widget-infoblock-icon-color:                                  rgba(255, 255, 255, 0.4) !default;
+$widget-infoblock-icon-font-size:                              40px !default;
+$widget-infoblock-tools-color:                                 rgba(255, 255, 255, 0.4) !default;
+$widget-infoblock-tools-font-size:                             17px !default;
+$widget-infoblock-stat-color:                                  #fff !default;
+$widget-infoblock-stat-font-size:                              15px !default;
+$widget-infoblock-title-color:                                 #fff !default;
+$widget-infoblock-title-font-size:                             25px !default;
+$widget-infoblock-text-color:                                  rgba(255, 255, 255, 0.9) !default;
+$widget-infoblock-text-font-size:                              15px !default;
+
+$widget-statistics-icon-height:                                50px !default;
+$widget-statistics-font-size:                                  25px !default;
+$widget-statistics-icon-width:                                 50px !default;

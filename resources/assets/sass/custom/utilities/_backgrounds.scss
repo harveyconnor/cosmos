@@ -1,0 +1,172 @@
+// Background variants
+.no-background {
+  background-color: transparent;
+}
+
+$default-set: (
+  "background": $btn-default-bg,
+  "border"    : $btn-default-border,
+  "color"     : $btn-default-color
+);
+
+$primary-set: (
+  "background": $btn-primary-bg,
+  "border"    : $btn-primary-border,
+  "color"     : $btn-primary-color
+);
+
+$success-set: (
+  "background": $btn-success-bg,
+  "border"    : $btn-success-border,
+  "color"     : $btn-success-color
+);
+
+$info-set: (
+  "background": $btn-info-bg,
+  "border"    : $btn-info-border,
+  "color"     : $btn-info-color
+);
+
+$warning-set: (
+  "background": $btn-warning-bg,
+  "border"    : $btn-warning-border,
+  "color"     : $btn-warning-color
+);
+
+$danger-set: (
+  "background": $btn-danger-bg,
+  "border"    : $btn-danger-border,
+  "color"     : $btn-danger-color
+);
+
+// Inverse
+$default-inverse-set: (
+  "background": $btn-default-color,
+  "border"    : $btn-default-color,
+  "color"     : $btn-default-bg
+);
+
+$primary-inverse-set: (
+  "background": $btn-primary-color,
+  "border"    : $btn-primary-color,
+  "color"     : $btn-primary-bg
+);
+
+$success-inverse-set: (
+  "background": $btn-success-color,
+  "border"    : $btn-success-color,
+  "color"     : $btn-success-bg
+);
+
+$info-inverse-set: (
+  "background": $btn-info-color,
+  "border"    : $btn-info-color,
+  "color"     : $btn-info-bg
+);
+
+$warning-inverse-set: (
+  "background": $btn-warning-color,
+  "border"    : $btn-warning-color,
+  "color"     : $btn-warning-bg
+);
+
+$danger-inverse-set: (
+  "background": $btn-danger-color,
+  "border"    : $btn-danger-color,
+  "color"     : $btn-danger-bg
+);
+
+// Social
+$facebook-set: (
+  "background": $btn-facebook-bg,
+  "border"    : $btn-facebook-border,
+  "color"     : $btn-facebook-color
+);
+
+$twitter-set: (
+  "background": $btn-twitter-bg,
+  "border"    : $btn-twitter-border,
+  "color"     : $btn-twitter-color
+);
+
+$linkedin-set: (
+  "background": $btn-linkedin-bg,
+  "border"    : $btn-linkedin-border,
+  "color"     : $btn-linkedin-color
+);
+
+$googleplus-set: (
+  "background": $btn-googleplus-bg,
+  "border"    : $btn-googleplus-border,
+  "color"     : $btn-googleplus-color
+);
+
+$youtube-set: (
+  "background": $btn-youtube-bg,
+  "border"    : $btn-youtube-border,
+  "color"     : $btn-youtube-color
+);
+
+$pinterest-set: (
+  "background": $btn-pinterest-bg,
+  "border"    : $btn-pinterest-border,
+  "color"     : $btn-pinterest-color
+);
+
+$instagram-set: (
+  "background": $btn-instagram-bg,
+  "border"    : $btn-instagram-border,
+  "color"     : $btn-instagram-color
+);
+
+$tumblr-set: (
+  "background": $btn-tumblr-bg,
+  "border"    : $btn-tumblr-border,
+  "color"     : $btn-tumblr-color
+);
+
+$flickr-set: (
+  "background": $btn-flickr-bg,
+  "border"    : $btn-flickr-border,
+  "color"     : $btn-flickr-color
+);
+
+$dribbble-set: (
+  "background": $btn-dribbble-bg,
+  "border"    : $btn-dribbble-border,
+  "color"     : $btn-dribbble-color
+);
+
+$colors-set: (
+  "default"         : $default-set,
+  "primary"         : $primary-set,
+  "success"         : $success-set,
+  "info"            : $info-set,
+  "warning"         : $warning-set,
+  "danger"          : $danger-set,
+  "default-inverse" : $default-inverse-set,
+  "primary-inverse" : $primary-inverse-set,
+  "success-inverse" : $success-inverse-set,
+  "info-inverse"    : $info-inverse-set,
+  "warning-inverse" : $warning-inverse-set,
+  "danger-inverse"  : $danger-inverse-set,
+  "facebook"        : $facebook-set,
+  "twitter"         : $twitter-set,
+  "linkedin"        : $linkedin-set,
+  "googleplus"      : $googleplus-set,
+  "youtube"         : $youtube-set,
+  "pinterest"       : $pinterest-set,
+  "instagram"       : $instagram-set,
+  "tumblr"          : $tumblr-set,
+  "flickr"          : $flickr-set,
+  "dribbble"        : $dribbble-set
+);
+
+@each $name, $set in $colors-set {
+  @include background-variant (
+    bg-#{$name},
+    map-get($set, "background"),
+    map-get($set, "border"),
+    map-get($set, "color")
+  );
+}

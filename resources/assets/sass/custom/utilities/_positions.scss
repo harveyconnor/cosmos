@@ -1,0 +1,19 @@
+.position-a {
+  position: absolute;
+}
+
+.position-f {
+  position: fixed;
+}
+
+.position-r {
+  position: relative;
+}
+
+@each $suf, $val in $spacers {
+  $suf: if($suf, "-#{$suf}", "");
+  .t#{$suf} { top:    $val !important; }
+  .r#{$suf} { right:  $val !important; }
+  .b#{$suf} { bottom: $val !important; }
+  .l#{$suf} { left:   $val !important; }
+}

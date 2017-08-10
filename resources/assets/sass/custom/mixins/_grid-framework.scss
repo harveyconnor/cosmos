@@ -1,0 +1,19 @@
+// Gutter variants
+@mixin make-grid-gutter-width-variants($i: 1, $list: ".col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}") {
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xs-#{$i}, .col-sm-#{$i}, .col-md-#{$i}, .col-lg-#{$i}";
+  }
+  @each $suf, $val in $grid-gutter-width-variants {
+    .row.gutter-#{$suf} {
+      margin-left:  -($val / 2);
+      margin-right: -($val / 2);
+      
+      & > {
+        #{$list} {
+          padding-left:  ($val / 2);
+          padding-right: ($val / 2); 
+        }
+      }
+    }
+  }
+}

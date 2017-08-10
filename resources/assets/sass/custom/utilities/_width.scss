@@ -1,0 +1,4 @@
+@each $suf, $val in $min-width-variants {
+  $suf: if($suf, "-#{$suf}", "");
+  .m-w#{$suf}   { min-width: $val !important; }
+}

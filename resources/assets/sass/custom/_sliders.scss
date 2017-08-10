@@ -1,0 +1,80 @@
+.slider.slider-horizontal {
+  height: $slider-handle-height;
+  width: 100%;
+}
+
+.slider.slider-vertical {
+  width: $slider-handle-width;
+}
+
+.slider-track {
+  background: $slider-track-bg;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.slider.slider-horizontal .slider-track {
+  height: $slider-horizontal-height;
+  margin-top: -3px;
+}
+
+.slider.slider-vertical .slider-track {
+  width: $slider-vertical-width;
+  margin-left: 1px;
+}
+
+.slider-selection {
+  background: $slider-selection-bg;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.slider-handle {
+  background: $slider-handle-bg;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  height: $slider-handle-height;
+  width: $slider-handle-width;
+}
+
+.slider-primary {
+  .slider-selection,
+  .slider-handle {
+    background: $brand-primary;
+  }
+}
+
+.slider-success {
+  .slider-selection,
+  .slider-handle {
+    background: $brand-success;
+  }
+}
+
+.slider-info {
+  .slider-selection,
+  .slider-handle {
+    background: $brand-info;
+  }
+}
+
+.slider-warning {
+  .slider-selection,
+  .slider-handle {
+    background: $brand-warning;
+  }
+}
+
+.slider-danger {
+  .slider-selection,
+  .slider-handle {
+    background: $brand-danger;
+  }
+}
+
+.slider-handle.square {
+  border-radius: $border-radius-base;
+}

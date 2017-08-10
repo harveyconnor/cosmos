@@ -1,0 +1,79 @@
+// Variants
+@mixin panel-variant($border, $heading-text-color, $heading-bg-color, $heading-border) {
+  border-color: $border;
+
+  & > .panel-heading {
+    background-color: $heading-bg-color;
+    border-color: $heading-border;
+    color: $heading-text-color;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: $border;
+    }
+
+    .badge {
+      background-color: $heading-text-color;
+      color: $heading-bg-color;
+    }
+
+    .panel-tools {
+      .tools-icon {
+        color: darken($heading-text-color, 10%);
+
+        &:hover {
+          color: $heading-text-color;
+        }
+      }
+    }
+  }
+
+  & > .panel-footer {
+    + .panel-collapse > .panel-body {
+      border-bottom-color: $border;
+    }
+  }
+}
+
+// Full variants
+@mixin panel-full-variant($bg-color, $border-color, $text-color) {
+  background-color: $bg-color;
+  border-color: $border-color;
+
+  & > .panel-heading {
+    background-color: lighten($bg-color, 5%);
+    border-color: $border-color;
+    color: $text-color;
+
+    + .panel-collapse > .panel-body {
+      border-top-color: $border-color;
+    }
+
+    .badge {
+      background-color: darken($bg-color, 10%);
+      color: $text-color;
+    }
+
+    .panel-tools {
+      .tools-icon {
+        color: darken($text-color, 10%);
+
+        &:hover {
+          color: $text-color;;
+        }
+      }
+    }
+  }
+
+  .panel-body {
+    color: $text-color;
+  }
+
+  & > .panel-footer {
+    background-color: lighten($bg-color, 5%);
+    border-top-color: $border-color;
+
+    + .panel-collapse > .panel-body {
+      border-bottom-color: $border-color;
+    }
+  }
+}

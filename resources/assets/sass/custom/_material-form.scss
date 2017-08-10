@@ -1,0 +1,91 @@
+.form-material {
+  .form-group {
+    padding: 15px 0;
+    position: relative;
+  }
+
+  .floating-label {
+    color: $mf-floating-label-color;
+    font-size: $mf-floating-label-font-size;
+    font-weight: normal;
+    left: 0;
+    line-height: $mf-floating-label-line-height;
+    margin-bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    top: 20px;
+    white-space: nowrap;
+    transition: all $transition-duration;
+  }
+
+  .form-control {
+    border-color: $mf-form-control-border;
+    border-radius: 0;
+    border-width: 0 0 1px;
+    height: auto;
+    padding: $mf-form-control-padding-vertical 0;
+    background-color: transparent;
+    background-position: center bottom, center calc(99%);
+    background-repeat: no-repeat;
+    background-size: 0 2px, 100% 1px;
+    transition: all $transition-duration;
+    @include box-shadow(none);
+    @include placeholder($mf-form-control-placeholder-color);
+
+    &:focus {
+      background-image: linear-gradient($mf-bottom-line-focus-bg, $mf-bottom-line-focus-bg);
+      background-size: 100% 2px, 100% 1px;
+    }
+
+    &[disabled],
+    &.disabled,
+    fieldset[disabled] & {
+      border-color: $mf-form-control-disabled-border;
+    }
+
+    &[disabled] ~ .floating-label,
+    &.disabled ~ .floating-label,
+    fieldset[disabled] ~ .floating-label {
+      color: $mf-form-control-disabled-color;
+    }
+  }
+
+  .has-value .floating-label,
+  .form-control:focus ~ .floating-label {
+    top: 0;
+    font-size: $mf-floating-label-focused-font-size;
+  }
+}
+
+// Sizes
+.form-material .input-sm ~ .floating-label,
+.form-material .form-group-sm .floating-label {
+  font-size: $mf-floating-label-sm-font-size;
+  line-height: $mf-floating-label-sm-line-height;
+}
+
+.form-material .input-lg ~ .floating-label,
+.form-material .form-group-lg .floating-label {
+  font-size: $mf-floating-label-lg-font-size;
+  line-height: $mf-floating-label-lg-line-height;
+}
+
+// Validation states
+.form-material .has-success {
+  @include mf-form-control-validation(
+    $mf-state-success
+  );
+}
+
+.form-material .has-warning {
+  @include mf-form-control-validation(
+    $mf-state-warning
+  );
+}
+
+.form-material .has-error {
+  @include mf-form-control-validation(
+    $mf-state-error
+  );
+}

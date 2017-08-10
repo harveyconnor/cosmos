@@ -1,0 +1,206 @@
+.profile {
+	.p-about {
+		background-color: $profile-about-bg;
+		border: $profile-about-border;
+		border-radius: $profile-about-border-radius;
+		text-align: center;
+
+		.pa-padding {
+		  padding: $profile-about-padding;
+		}
+
+  	.pa-avatar {
+			margin-bottom: $profile-about-avatar-margin-bottom;
+
+  		img {
+  			border-radius: $profile-about-avatar-border-radius;
+  		}
+  	}
+
+  	.pa-name {
+	    color: $profile-about-name-color;
+	    font-size: $profile-about-name-font-size;
+		  font-weight: $profile-about-name-font-weight;
+  	}
+
+  	.pa-text {
+	    color: $profile-about-text-color;
+	    font-size: $profile-about-text-font-size;
+		  font-weight: $profile-about-text-font-weight;
+  	}
+
+  	.pa-rating {
+	    color: $profile-about-rating-color;
+	    font-size: $profile-about-rating-font-size;
+			margin-bottom: $profile-about-rating-margin-bottom;
+  	}
+
+  	.pa-stat {
+  		border-top: $profile-about-stat-border-top;
+			
+			.pas-item {
+  			border-right: $profile-about-stat-item-border-right;
+  			padding: $profile-about-stat-item-padding;
+  			text-align: center;
+
+  			&:last-child {
+  				border-right: none;
+  			}
+
+	  		.pas-number {
+			    color: $profile-about-stat-number-color;
+			    font-size: $profile-about-stat-number-font-size;
+				  font-weight: $profile-about-stat-number-font-weight;
+				  overflow: hidden;
+		  		text-overflow: ellipsis;
+		  		white-space: nowrap;
+	  		}
+
+	  		.pas-text {
+			    color: $profile-about-stat-text-color;
+			    font-size: $profile-about-stat-text-font-size;
+				  font-weight: $profile-about-stat-text-font-weight;
+				  overflow: hidden;
+		  		text-overflow: ellipsis;
+		  		white-space: nowrap;
+				}
+			}
+  	}
+	}
+
+	.p-users {
+		background-color: $profile-users-bg;
+		border: $profile-users-border;
+		border-radius: $profile-users-border-radius;
+		padding: $profile-users-padding;
+
+		a {
+	    color: $profile-users-link-color;
+	    font-size: $profile-users-link-font-size;
+		  font-weight: $profile-users-link-font-weight;
+			text-decoration: none;
+			transition: all $transition-duration;
+
+		  &:hover,
+		  &:focus {
+	    	color: $profile-users-link-hover-color;
+		  }
+		}
+
+		.pu-avatar {
+			margin: $profile-users-avatar-margin-vertical 0;
+
+			img {
+  			border-radius: $profile-users-avatar-border-radius;
+				max-width: 100%;
+			}
+		}
+
+		.pu-name {
+		  overflow: hidden;
+  		text-overflow: ellipsis;
+  		white-space: nowrap;
+		}
+	}
+
+	.p-info {
+		background-color: $profile-info-bg;
+		border: $profile-info-border;
+		border-radius: $profile-info-border-radius;
+		padding: $profile-info-padding;
+
+		.pi-item {
+			margin-bottom: $profile-info-margin-bottom;
+			padding-left: 30px;
+			position: relative;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			.pii-icon {
+		    color: $profile-info-icon-color;
+		    font-size: $profile-info-icon-font-size;
+			  font-weight: $profile-info-icon-font-weight;
+				position: absolute;
+				top: -1px;
+				left: 0;
+			}
+
+			.pii-value {
+		    color: $profile-info-value-color;
+		    font-size: $profile-info-value-font-size;
+			  font-weight: $profile-info-value-font-weight;
+			}
+		}
+	}
+
+	.p-skills {
+		background-color: $profile-skills-bg;
+		border: $profile-skills-border;
+		border-radius: $profile-skills-border-radius;
+		padding: $profile-skills-padding;
+	}
+
+	.p-content {
+		background-color: $profile-content-bg;
+		border: $profile-content-border;
+		border-radius: $profile-content-border-radius;
+
+		.pc-padding {
+		  padding: $profile-content-padding;
+		}
+
+  	.pc-task {
+    	position: relative;
+
+			a {
+				display: block;
+    		padding: $profile-content-task-padding;
+				text-decoration: none;
+				transition: all $transition-duration;
+
+			  &:hover,
+			  &:focus {
+		    	background-color: $profile-content-task-hover-bg;
+			  }
+			}
+
+    	.pct-avatar {
+    		left: 30px;
+    		position: absolute;
+    		top: 15px;
+
+    		img {
+    			border-radius: $profile-content-task-avatar-border-radius;
+    		}
+    	}
+
+    	.pct-name {
+		    color: $profile-content-task-name-color;
+			  font-weight: $profile-content-task-name-font-weight;
+		    font-size: $profile-content-task-name-font-size;
+		    overflow: hidden;
+		    padding-right: 50px;
+			  text-overflow: ellipsis;
+			  white-space: nowrap;
+    	}
+			
+			.pct-time {
+			  color: $profile-content-task-time-color;
+			  font-size: $profile-content-task-time-font-size;
+				font-weight: $profile-content-task-time-font-weight;
+				top: 14px;
+				right: 30px;
+    		position: absolute;
+			}
+
+    	.pct-text {
+		    color: $profile-content-task-text-color;
+			  font-weight: $profile-content-task-text-font-weight;
+		    font-size: $profile-content-task-text-font-size;
+		    margin: $profile-content-task-text-vertical-margin 0;
+    	}
+    }
+	}
+}

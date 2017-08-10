@@ -1,0 +1,147 @@
+.btn {
+  box-shadow: $btn-box-shadow;
+  position: relative;
+  transition: $btn-transition;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    box-shadow: $btn-active-box-shadow;
+  }
+}
+
+.btn-icon {
+  padding: 0;
+}
+
+// Pill
+.btn-pill {
+  border-radius: $btn-border-radius-pill;
+}
+
+// Outline
+.btn-outline-default {
+  @include button-outline-variant(
+    $btn-default-border,
+    $btn-default-color
+  );
+}
+
+.btn-outline-primary {
+  @include button-outline-variant(
+    $btn-primary-border,
+    $btn-primary-color
+  );
+}
+
+.btn-outline-success {
+  @include button-outline-variant(
+    $btn-success-border,
+    $btn-success-color
+  );
+}
+
+.btn-outline-info {
+  @include button-outline-variant(
+    $btn-info-border,
+    $btn-info-color
+  );
+}
+
+.btn-outline-warning {
+  @include button-outline-variant(
+    $btn-warning-border,
+    $btn-warning-color
+  );
+}
+
+.btn-outline-danger {
+  @include button-outline-variant(
+    $btn-danger-border,
+    $btn-danger-color
+  );
+}
+
+// Social
+$facebook-set: (
+  "background": $btn-facebook-bg,
+  "border"    : $btn-facebook-border,
+  "color"     : $btn-facebook-color
+);
+
+$twitter-set: (
+  "background": $btn-twitter-bg,
+  "border"    : $btn-twitter-border,
+  "color"     : $btn-twitter-color
+);
+
+$linkedin-set: (
+  "background": $btn-linkedin-bg,
+  "border"    : $btn-linkedin-border,
+  "color"     : $btn-linkedin-color
+);
+
+$googleplus-set: (
+  "background": $btn-googleplus-bg,
+  "border"    : $btn-googleplus-border,
+  "color"     : $btn-googleplus-color
+);
+
+$youtube-set: (
+  "background": $btn-youtube-bg,
+  "border"    : $btn-youtube-border,
+  "color"     : $btn-youtube-color
+);
+
+$pinterest-set: (
+  "background": $btn-pinterest-bg,
+  "border"    : $btn-pinterest-border,
+  "color"     : $btn-pinterest-color
+);
+
+$instagram-set: (
+  "background": $btn-instagram-bg,
+  "border"    : $btn-instagram-border,
+  "color"     : $btn-instagram-color
+);
+
+$tumblr-set: (
+  "background": $btn-tumblr-bg,
+  "border"    : $btn-tumblr-border,
+  "color"     : $btn-tumblr-color
+);
+
+$flickr-set: (
+  "background": $btn-flickr-bg,
+  "border"    : $btn-flickr-border,
+  "color"     : $btn-flickr-color
+);
+
+$dribbble-set: (
+  "background": $btn-dribbble-bg,
+  "border"    : $btn-dribbble-border,
+  "color"     : $btn-dribbble-color
+);
+
+$custom-set: (
+  "facebook"        : $facebook-set,
+  "twitter"         : $twitter-set,
+  "linkedin"        : $linkedin-set,
+  "googleplus"      : $googleplus-set,
+  "youtube"         : $youtube-set,
+  "pinterest"       : $pinterest-set,
+  "instagram"       : $instagram-set,
+  "tumblr"          : $tumblr-set,
+  "flickr"          : $flickr-set,
+  "dribbble"        : $dribbble-set
+);
+
+@each $name, $set in $custom-set {
+  .btn-#{$name} {
+    @include button-variant (
+      map-get($set, "color"),
+      map-get($set, "background"),
+      map-get($set, "border")
+    );
+  }
+}

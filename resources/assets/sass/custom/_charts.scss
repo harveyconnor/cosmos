@@ -1,0 +1,57 @@
+.flotTip {
+  background-color: #333;
+  border-radius: $border-radius-base;
+  color: #fff;
+  font-size: 13px;
+  opacity: 0.8;
+  padding: 8px 12px;
+  z-index: 100;
+}
+
+.ct-line {
+  stroke-width: 1px;
+}
+
+.ct-point {
+  stroke-width: 5px;
+}
+
+.ct-series-a .ct-point, .ct-series-a .ct-line, .ct-series-a .ct-bar, .ct-series-a .ct-slice-donut {
+  stroke: $brand-primary;
+}
+
+.ct-series-a .ct-slice-pie, .ct-series-a .ct-area {
+  fill: $brand-primary;
+}
+
+.ct-series-b .ct-point, .ct-series-b .ct-line, .ct-series-b .ct-bar, .ct-series-b .ct-slice-donut {
+  stroke: $brand-warning;
+}
+
+.ct-series-b .ct-slice-pie, .ct-series-b .ct-area {
+  fill: $brand-warning;
+}
+
+.ct-series-c .ct-point, .ct-series-c .ct-line, .ct-series-c .ct-bar, .ct-series-c .ct-slice-donut {
+  stroke: $brand-danger;
+}
+
+.ct-series-c .ct-slice-pie, .ct-series-c .ct-area {
+  fill: $brand-danger;
+}
+
+.ct-series-d .ct-point, .ct-series-d .ct-line, .ct-series-d .ct-bar, .ct-series-d .ct-slice-donut {
+  stroke: $brand-success;
+}
+
+.ct-series-d .ct-slice-pie, .ct-series-d .ct-area {
+  fill: $brand-success;
+}
+
+.ct-series-e .ct-point, .ct-series-e .ct-line, .ct-series-e .ct-bar, .ct-series-e .ct-slice-donut {
+  stroke: $brand-info;
+}
+
+.ct-series-e .ct-slice-pie, .ct-series-e .ct-area {
+  fill: $brand-info;
+}

@@ -1,0 +1,38 @@
+.label {
+  border: 1px solid transparent;
+  border-radius: $label-border-radius;
+  display: inline-block;
+  font-size: $label-font-size;
+  font-weight: $label-font-weight;
+  padding: $label-padding;
+}
+
+// Pill
+.label-pill {
+  border-radius: $label-pill-border-radius;
+}
+
+// Outline
+.label-outline-default {
+  @include label-outline-variant($label-default-bg, $label-color);
+}
+
+.label-outline-primary {
+  @include label-outline-variant($label-primary-bg, $label-color);
+}
+
+.label-outline-success {
+  @include label-outline-variant($label-success-bg, $label-color);
+}
+
+.label-outline-info {
+  @include label-outline-variant($label-info-bg, $label-color);
+}
+
+.label-outline-warning {
+  @include label-outline-variant($label-warning-bg, $label-color);
+}
+
+.label-outline-danger {
+  @include label-outline-variant($label-danger-bg, $label-color);
+}

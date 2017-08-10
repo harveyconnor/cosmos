@@ -1,0 +1,42 @@
+// Variants
+@mixin custom-control-variant($bg) {
+  .custom-control-input {
+    &:checked ~ .custom-control-indicator {
+      background-color: $bg;
+    }
+
+    &:active ~ .custom-control-indicator {
+      background-color: lighten($bg, 25);
+    }
+  }
+}
+
+// Select sizes
+@mixin custom-select-size($border-radius, $font-size, $height, $line-height, $padding-horizontal, $padding-vertical) {
+  $padding-right: $padding-base-horizontal + $padding-base-horizontal;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  height: $height;
+  line-height: $line-height;
+  padding: $padding-vertical $padding-right $padding-vertical $padding-horizontal;
+  padding-right: $padding-horizontal \9;
+}
+
+// Form validation states
+@mixin custom-form-control-validation($text-color, $border-color, $background-color) {
+  // Color the indicator
+  .custom-control-indicator  {
+    border-color: $border-color;
+  }
+  // Color the label
+  .custom-control-label  {
+    color: $text-color;
+  }
+  // Set the border and box shadow on specific inputs to match
+  .custom-select {
+    border-color: $border-color;
+    &:focus {
+      border-color: darken($border-color, 10%);
+    }
+  }
+}

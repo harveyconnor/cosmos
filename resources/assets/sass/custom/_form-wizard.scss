@@ -1,0 +1,88 @@
+.form-wizard {
+  .fw-header {
+    background-color: $form-wizard-header-bg;
+    border-bottom: 1px solid  $form-wizard-header-border;
+  }
+
+  .nav-pills {
+    > li {
+      + li {
+        margin-left: 0;
+      }
+
+      > a {
+        background-color: $form-wizard-header-link-complete-bg;
+        color: $form-wizard-header-link-complete-color;
+        border-radius: 0;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 20px 0 30px;
+
+        .chevron {
+          border: 25px solid transparent;
+          border-left: 15px solid rgba(0, 0, 0, 0.15);
+          border-right: 0;
+          display: block;
+          position: absolute;
+          right: -15px;
+          top: 0;
+          z-index: 1;
+        }
+
+        .chevron:before {
+          border: 25px solid transparent;
+          border-left: 15px solid $form-wizard-header-link-complete-chevron;
+          border-right: 0;
+          content: '';
+          display: block;
+          position: absolute;
+          right: 1px;
+          top: -25px;
+        }
+      }
+
+      &.active > a,
+      &.active > a:hover,
+      &.active > a:focus {
+        background-color: $form-wizard-header-link-active-bg;
+        color: $form-wizard-header-link-active-color;
+
+        .chevron:before {
+          border-left-color: $form-wizard-header-link-active-chevron;
+        }
+      }
+
+      &.active ~ li > a,
+      &.active ~ li > a:hover,
+      &.active ~ li > a:focus {
+        background-color: $form-wizard-header-link-bg;
+        color: $form-wizard-header-link-color;
+
+        .chevron:before {
+          border-left-color: $form-wizard-header-link-chevron;
+        }
+      }
+    }
+  }
+
+  .fw-footer {
+    background-color: $form-wizard-footer-bg;
+    border-top: 1px solid  $form-wizard-footer-border;
+    padding: 20px 30px;
+
+    .pager {
+      margin: 0;
+    }
+  }
+
+  .progress {
+    border-radius: 0;
+    height: $form-wizard-progress-height;
+    margin-bottom: 0;
+    box-shadow: none;
+  }
+
+  .tab-content {
+    padding: 30px;
+  }
+}
